@@ -1,5 +1,10 @@
 import java.util.Arrays;
 
+/**
+ * This class have some utils you will need to treat cli and to get default if its necessary
+ * and if p is default it will generate a random grid with Math.Random. It also have grid generator
+ * and copyline generator to save the random grids if you like
+ */
 public class Utilities {
     String utilitiesReport = "";
 
@@ -9,6 +14,9 @@ public class Utilities {
      * the value is valid
      */
     public String[] argsTreater(String[] values) {
+        for(int i = 0; i < values.length; i++){
+            values[i] = values[i].toLowerCase();
+        }
         String[] treatedValues = new String[5];
         boolean[] presentValues = {false, false, false, false, false};
         String[] filterValues = {"w=", "h=", "g=", "s=", "p="};
@@ -42,9 +50,6 @@ public class Utilities {
                             break;
                         }
                     }
-                    if(!pInvalido){
-                        treatedValues[chosedValue] = values[chosedValue].replace(filterValues[4], "");
-                    }
                 }
 
                 if (values[chosedValue].charAt(0) == filterValues[verifier].charAt(0)) {
@@ -61,6 +66,10 @@ public class Utilities {
                         } catch (NumberFormatException e) {
                             treatedValues[verifier] = "Inválido";
                             utilitiesReport +="\n|| "+ filterValues[verifier] +" Invalid (will be used Default)";
+                        }
+                    }else if(values[chosedValue].charAt(0) == 'p'){
+                        if(!pInvalido){
+                            treatedValues[verifier] = values[chosedValue].replace(filterValues[4], "");
                         }
                     }
                     values[chosedValue] = values[chosedValue].replace(filterValues[verifier], "");
@@ -149,6 +158,7 @@ public class Utilities {
                     GRID += "0";
                 }
             }
+            GRID += "#";
         }
         return GRID;
     }

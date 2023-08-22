@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e87dfa2-768c-4f51-886b-624df31994be" name="Changes" comment="Game of life finished" />
+    <list default="true" id="1e87dfa2-768c-4f51-886b-624df31994be" name="Changes" comment="Game of life finished">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game_Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Value_Treater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Value_Treater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameOfLife.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameOfLife.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameOfLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameOfLife.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,9 +43,35 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bruno/Desktop/Nova pasta 1/GameOfLife&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="gameOfLife" />
+      <module name="GameOfLife" />
+      <option name="PROGRAM_PARAMETERS" value="w=10 h=10 g=100" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gameOfLife" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameOfLife" />
+      <module name="GameOfLife" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.gameOfLife" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

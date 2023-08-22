@@ -1,12 +1,18 @@
+/**
+ *  Cell class: It have values of if its alive or not and how much alive neighbors it has.
+ *  it also have methods to show itself with an unicode and verify rules
+ */
 public class Cell {
-    String alive_icon = "\uD83D\uDE03";
-    /* Legendas dos unicodes:
+    String alive_icon = "\u25FE";
+    //Unicode Default = "\u25FE" ◾
+    /* Legendas dos unicodes-surrogates:
     \uD83D\uDE03 Sorriso 😃
     \uD83D\uDE80 Foguete 🚀
     \uD83D\uDE07 Anjinho 😇
     */
-    String dead_icon = "\uD83D\uDC80";
-    /* Legendas dos unicodes:
+    String dead_icon = "\u25FD";
+    //Unicode default = \u25FD ◽
+    /* Legendas dos unicodes-surrogates:
     \uD83D\uDC80 Caveira 💀
     \uD83D\uDC7E E.T.     👾
     \uD83D\uDE08 Demoninho 😈

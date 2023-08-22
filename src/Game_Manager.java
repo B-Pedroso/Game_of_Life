@@ -1,3 +1,7 @@
+/**
+ * It cares about generations and call the necessary Classes and methods.
+ * It also calls the method playing
+ */
 public class Game_Manager {
     String gameManagerReport = "";
     Utilities util = new Utilities();
@@ -20,18 +24,31 @@ public class Game_Manager {
                 initialGen[line][column] = cell;
             }
         }
+        boolean wasItaBreakpoint = false;
         for (int line = 0; line < intlines; line++) {
+            wasItaBreakpoint = false;
             for (int column = 0; column < intcolumns; column++) {
                 if(populationposition > population.length()-1){
                     break;
                 }
                 if(population.charAt(populationposition) == '1'){
                     initialGen[line][column].setAlive(true);
-                } else if (population.charAt(populationposition) == '#') {
                     populationposition += 1;
-                    break;
+                    wasItaBreakpoint = true;
+                } else if (population.charAt(populationposition) == '#') {
+                    if(column != 0 || wasItaBreakpoint) {
+                        populationposition += 1;
+                        break;
+                    }else{
+                        populationposition += 1;
+                        wasItaBreakpoint = true;
+                        column -= 1;
+                    }
+                }else{
+                    populationposition += 1;
+                    wasItaBreakpoint = true;
                 }
-                populationposition += 1;
+
             }
             if(populationposition > population.length()){
                 break;
@@ -65,5 +82,50 @@ public class Game_Manager {
         }
         gen[line][column].setAliveNeighbors(neighbors);
         return gen[line][column].verifyingRules(gen[line][column]); //Next Gen Cell
+    }
+
+    /**
+     * Start the game of life
+     * @param finalGen the number of generations will be printed
+     * @param speedTime the time of pause beetwen the generations
+     * @param initialGen The first grid to start the game
+     * @return the final gen to be printed in the report
+     * @throws InterruptedException //Pause between the generations
+     */
+    public static Cell[][] playing(int finalGen, int speedTime, Cell[][] initialGen) throws InterruptedException {
+        Game_Manager manager = new Game_Manager();
+        int lines = initialGen.length;
+        int columns = initialGen[0].length;
+        if(finalGen != 0){
+            for(int thisGeneration = 0; thisGeneration < finalGen; thisGeneration++){
+                System.out.println("\033[H\033[2J");
+                Cell[][] nextGen = new Cell[lines][columns];
+                for(int line = 0; line < lines; line++){
+                    for(int column = 0; column < columns; column++){
+                        initialGen[line][column].cellShow();
+                        nextGen[line][column] = manager.nextGenCellGenerator(initialGen, line, column);
+                    }
+                    System.out.println();
+                }
+                Thread.sleep(speedTime);
+                if((thisGeneration-1) != finalGen) initialGen = nextGen;
+            }
+        }else{
+            while(true){
+                System.out.println("\033[H\033[2J");
+                Cell[][] nextGen = new Cell[lines][columns];
+                for(int line = 0; line < lines; line++){
+                    for(int column = 0; column < columns; column++){
+                        initialGen[line][column].cellShow();
+                        nextGen[line][column] = manager.nextGenCellGenerator(initialGen, line, column);
+                    }
+                    System.out.println();
+                }
+                System.out.println("Aperte ctrl+c no terminal, ou ctrl+F2 no terminal intellij");
+                Thread.sleep(speedTime);
+                initialGen = nextGen;
+            }
+        }
+        return initialGen;
     }
 }
